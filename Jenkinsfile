@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       args ''
-      image 'ansible/molecule'
+      image 'retr0h/molecule'
     }
 
   }
