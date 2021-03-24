@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       args ''
-      image 'molecule-base'
+      image 'molecule'
     }
 
   }
