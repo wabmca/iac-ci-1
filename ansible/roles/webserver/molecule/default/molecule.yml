@@ -7,8 +7,8 @@ lint:
   name: yamllint
   enabled: False
 platforms:
-  - name: instance
-    image: centos/systemd
+  - name: centos
+    image: milcom/centos7-systemd
     command: /sbin/init
     capabilities:
       - SYS_ADMIN
