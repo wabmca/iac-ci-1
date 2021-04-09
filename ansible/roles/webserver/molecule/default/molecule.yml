@@ -8,7 +8,7 @@ lint:
   enabled: False
 platforms:
   - name: instance
-    image: centos7/systemd
+    image: centos/systemd
     command: /sbin/init
     capabilities:
       - SYS_ADMIN
