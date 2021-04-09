@@ -3,13 +3,24 @@ dependency:
   name: galaxy
 driver:
   name: docker
+lint:
+  name: yamllint
+  enabled: False
 platforms:
   - name: centos
     image: milcom/centos7-systemd
-    privileged: true
+    command: /sbin/init
+    capabilities:
+      - SYS_ADMIN
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup
 provisioner:
   name: ansible
+  lint:
+    name: ansible-lint
+scenario:
+  name: default
 verifier:
-  name: ansible
-  options:
-   v: 1
+  name: testinfra
+  lint:
+    name: flake8
