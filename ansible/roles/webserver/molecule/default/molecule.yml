@@ -8,7 +8,7 @@ lint:
   enabled: False
 platforms:
   - name: centos
-    image: centos
+    image: geerlingguy/docker-centos7-ansible:latest
     command: /sbin/init
     capabilities:
       - SYS_ADMIN
