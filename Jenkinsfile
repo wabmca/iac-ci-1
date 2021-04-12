@@ -10,36 +10,42 @@ pipeline {
     stage('Role syntax') {
       steps {
         sh '''cd $ROLEDIR
+export MOLECULE_NO_LOG="false"
 molecule syntax'''
       }
     }
     stage('Role dependecies') {
       steps {
         sh '''cd $ROLEDIR
+export MOLECULE_NO_LOG="false"
 molecule dependency'''
       }
     }
     stage('Role create') {
       steps {
         sh '''cd $ROLEDIR
+export MOLECULE_NO_LOG="false"
 molecule create'''
       }
     }
     stage('Role prepare') {
       steps {
         sh '''cd $ROLEDIR
+export MOLECULE_NO_LOG="false"
 molecule prepare'''
       }
     }
     stage('Role converge') {
       steps {
         sh '''cd $ROLEDIR
+export MOLECULE_NO_LOG="false"
 molecule converge'''
       }
     }
     stage('Role idempotence') {
       steps {
         sh '''cd $ROLEDIR
+export MOLECULE_NO_LOG="false"
 molecule idempotence'''
       }
     }
