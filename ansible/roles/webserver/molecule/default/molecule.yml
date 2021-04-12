@@ -15,6 +15,7 @@ platforms:
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup
 provisioner:
+  env: MOLECULE_NO_LOG="false" 
   name: ansible
   lint:
     name: ansible-lint
