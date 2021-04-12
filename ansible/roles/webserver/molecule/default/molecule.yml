@@ -8,7 +8,7 @@ lint:
   enabled: False
 platforms:
   - name: centos
-    image: milcom/centos7-systemd
+    image: centos
     command: /sbin/init
     capabilities:
       - SYS_ADMIN
