@@ -11,54 +11,54 @@ pipeline {
       steps {
         sh '''cd $ROLEDIR
 export MOLECULE_NO_LOG="false"
-molecule syntax'''
+molecule --debug syntax'''
       }
     }
     stage('Role dependecies') {
       steps {
         sh '''cd $ROLEDIR
 export MOLECULE_NO_LOG="false"
-molecule dependency'''
+molecule --debug dependency'''
       }
     }
     stage('Role create') {
       steps {
         sh '''cd $ROLEDIR
 export MOLECULE_NO_LOG="false"
-molecule create'''
+molecule --debug create'''
       }
     }
     stage('Role prepare') {
       steps {
         sh '''cd $ROLEDIR
 export MOLECULE_NO_LOG="false"
-molecule prepare'''
+molecule --debug prepare'''
       }
     }
     stage('Role converge') {
       steps {
         sh '''cd $ROLEDIR
 export MOLECULE_NO_LOG="false"
-molecule converge'''
+molecule --debug converge'''
       }
     }
     stage('Role idempotence') {
       steps {
         sh '''cd $ROLEDIR
 export MOLECULE_NO_LOG="false"
-molecule idempotence'''
+molecule --debug idempotence'''
       }
     }
     stage('Role side_effect') {
       steps {
         sh '''cd $ROLEDIR
-molecule side-effect'''
+molecule  --debug side-effect'''
       }
     }
     stage('Role verify') {
       steps {
         sh '''cd $ROLEDIR
-molecule verify'''
+molecule --debug verify'''
       }
     }
     stage('Stage Ansible run') {
