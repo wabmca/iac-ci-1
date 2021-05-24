@@ -1,5 +1,5 @@
 # Molecule managed
-cat /etc/resolv.conf
+RUN cat /etc/resolv.conf
 {% if item.registry is defined %}
 FROM {{ item.registry.url }}/{{ item.image }}
 {% else %}
