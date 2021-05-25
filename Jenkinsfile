@@ -25,8 +25,10 @@ molecule --debug dependency'''
 
     stage('Role create') {
       steps {
+        export MOLECULE_NO_LOG="false"
+
         sh '''cd $ROLEDIR
-molecule create'''
+        molecule --debug create'''
       }
     }
 
