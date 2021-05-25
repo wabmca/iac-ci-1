@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       args ''
-      image 'molecule-base'
+      image 'retr0h/molecule'
     }
 
   }
@@ -22,8 +22,13 @@ export MOLECULE_NO_LOG="false"
 molecule --debug dependency'''
       }
     }
-
-    stage('Role prepare') {
+stage('Role create') {
+      steps {
+        sh '''cd $ROLEDIR
+molecule create'''
+      }
+    }
+stage('Role prepare') {
       steps {
         sh '''cd $ROLEDIR
 export MOLECULE_NO_LOG="false"
