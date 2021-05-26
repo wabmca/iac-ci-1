@@ -1,12 +1,12 @@
 pipeline {
-  stages {
-    stage('Role pullimage') {
-      steps {
-        sh '''export DOCKER_TLS_VERIFY=0
-        unset export DOCKER_TLS_VERIFY
-        docker -H tcp://0.0.0.0:2375 pull retr0h/molecule'''
-      }
+  agent {
+    docker {
+      args '-H tcp://127.0.0.1:2375'
+      image 'retr0h/molecule'
     }
+
+  }
+  stages {
     stage('Role syntax') {
       steps {
         sh '''cd $ROLEDIR
@@ -14,6 +14,7 @@ export MOLECULE_NO_LOG="false"
 molecule --debug syntax'''
       }
     }
+
     stage('Role dependecies') {
       steps {
         sh '''cd $ROLEDIR
