@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      args '-H tcp://127.0.0.1:2375'
+      args '-H tcp://0.0.0.0:2375'
       image 'retr0h/molecule'
     }
 
