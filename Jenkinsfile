@@ -1,9 +1,9 @@
 pipeline {
   agent {
     docker {
+      args ''
       image 'retr0h/molecule'
-      args '-H tcp://0.0.0.0:2375'
-    }
+     }
 
   }
   stages {
