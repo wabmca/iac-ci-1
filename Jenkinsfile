@@ -23,14 +23,6 @@ molecule --debug dependency'''
       }
     }
 
-    stage('Role create') {
-      steps {
-        sh '''cd $ROLEDIR
-        export MOLECULE_NO_LOG="false"
-        molecule --debug create'''
-      }
-    }
-
     stage('Role prepare') {
       steps {
         sh '''cd $ROLEDIR
